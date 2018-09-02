@@ -7,29 +7,25 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-        char *datas;
+        byte *datas = (byte*)malloc(1);
         int count = 0;
 
           *(datas + count++) = '1';
           *(datas + count++) = '2';
           *(datas + count++) = '3';
-          
+          *(datas + count++) = '4';
+          *(datas + count++) = '5';
+
 
         
 
-count = 0;
-Serial.println(sizeof(datas));
-          for(int i = 0; i<(int)sizeof(datas); i++){
-            Serial.println(datas[i]);
+//int data_length = sizeof(datas);
+          for(int i = 0; i<(int)sizeof(datas)+1; i++){
+            Serial.println((char)*(datas + i));
           }
-//          Serial.println(datas[count++]);
+//          Serial.println(*(datas + count));
         
 
         delay(1000);
 
 }
-
-
-
-
-
